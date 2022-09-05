@@ -14,13 +14,19 @@ export default class ItemAddForm extends Component {
 
   saveItem = () => {
     const {title, description, status, priority} = this.state;
-    this.props.onAdd({ title, description, status, priority });
-
-    this.setState({
-      title: '',
-      description: '',
-      prioririty: PRIORITIES.LOW,
-      status: STATUSES.TODO,});
+    if (title.trim() === ''){
+      this.setState({error: 'error', placeholder: 'Must be filled!'});
+    } else {
+      this.props.onAdd({ title, description, status, priority });
+      
+      this.setState({
+        title: '',
+        description: '',
+        prioririty: PRIORITIES.LOW,
+        status: STATUSES.TODO,
+        error: '',
+        placeholder: ''});
+    }    
   }
 
   render() {
@@ -29,6 +35,8 @@ export default class ItemAddForm extends Component {
       description,
       status,
       priority,
+      error,
+      placeholder
     } = this.state;
 
     return (
@@ -41,6 +49,8 @@ export default class ItemAddForm extends Component {
               name="title"
               value={title}
               onChange={this.handleChange}
+              className={error}
+              placeholder= {placeholder}
             />
           </p>
           <p>

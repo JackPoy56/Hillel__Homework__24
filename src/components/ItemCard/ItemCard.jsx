@@ -49,7 +49,7 @@ export default class ItemCard extends Component {
 
     return (
       <div className="ItemCard">
-        {!this.state.titleEditMode && <p onClick={this.handleEditModeOn} name="title">{title === ''? 'Change title': title}</p>}
+        {!this.state.titleEditMode && <p onClick={this.handleEditModeOn} name="title">{title}</p>}
         {titleEditMode && (
           <p>
             <input

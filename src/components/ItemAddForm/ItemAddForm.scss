@@ -8,6 +8,10 @@
     border: 1px solid black;
     font-weight: bold;
 
+    .error {
+        border: 1px solid red;
+    }
+
     form p {
         display: flex;
         align-items: center;
