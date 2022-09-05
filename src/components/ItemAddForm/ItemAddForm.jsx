@@ -6,7 +6,7 @@ export default class ItemAddForm extends Component {
   state = {
     title: '',
     description: '',
-    prioririty: PRIORITIES.LOW,
+    priority: PRIORITIES.LOW,
     status: STATUSES.TODO,
   };
 
@@ -22,7 +22,7 @@ export default class ItemAddForm extends Component {
       this.setState({
         title: '',
         description: '',
-        prioririty: PRIORITIES.LOW,
+        priority: PRIORITIES.LOW,
         status: STATUSES.TODO,
         error: '',
         placeholder: ''});
